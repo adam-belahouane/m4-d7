@@ -74,11 +74,9 @@ const Comments = () => {
         );
         if (response.ok) {
           let data = await response.json();
-          this.setState({
-            comments: data,
-          });
+          setComments(data)
 
-          console.log(this.state.comments);
+          console.log(comments);
 
           console.log(data);
         } else {
@@ -91,6 +89,15 @@ const Comments = () => {
 
     fetchComments(this.props.query)
   }, []);
+
+  return(
+    <>
+
+        {comments.map(e => {
+           return <SingleComment key={e._id} comment={e.comment} rating={e.rate} id={e._id}/>
+         } )}
+       </>
+  )
 
   
 };
