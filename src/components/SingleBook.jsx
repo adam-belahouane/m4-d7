@@ -1,9 +1,6 @@
-import Card from 'react-bootstrap/Card'
-import { Component } from 'react'
-import Comments from './Comments'
-
-
-
+import Card from "react-bootstrap/Card";
+import { Component, useState } from "react";
+import Comments from "./Comments";
 
 /*
 
@@ -21,44 +18,52 @@ is true, the SingleBook should have some styling that reflects that state change
 
 */
 
+const MyCard = (props) => {
+  const [selected, setSelected] = useState(false);
 
-class MyCard extends Component {
-  state = {
-    selected: false
+  const handleToggle = () => {
+    setSelected(!selected);
+  };
 
-  }
+  return (
+    <Card
+      onClick={handleToggle}
+      className={selected ? "selected" : null}
+      key={props.book.asin}
+    >
+      <Card.Img variant="top" src={props.book.img} />
+      <Card.Body>
+        <Card.Title>{props.book.title}</Card.Title>
+        {selected && <Comments query={props.book.asin} />}
+      </Card.Body>
+    </Card>
+  );
+};
 
-  handleToggle = () => {
-    this.setState({ selected: !this.state.selected });
-  }
+// class MyCard extends Component {
+//   state = {
+//     selected: false,
+//   };
 
-  render() {
+//   handleToggle = () => {
+//     this.setState({ selected: !this.state.selected });
+//   };
 
-    return (
+//   render() {
+//     return (
+//       <Card
+//         onClick={this.handleToggle}
+//         className={this.state.selected ? "selected" : null}
+//         key={this.props.book.asin}
+//       >
+//         <Card.Img variant="top" src={this.props.book.img} />
+//         <Card.Body>
+//           <Card.Title>{this.props.book.title}</Card.Title>
+//           {this.state.selected && <Comments query={this.props.book.asin} />}
+//         </Card.Body>
+//       </Card>
+//     );
+//   }
+// }
 
-      
-
-
-        <Card  onClick={this.handleToggle} className={this.state.selected ? "selected" : null} key={this.props.book.asin} >
-          <Card.Img variant="top" src={this.props.book.img} />
-          <Card.Body>
-            <Card.Title>{this.props.book.title}</Card.Title>
-            {
-              this.state.selected &&
-              <Comments query={this.props.book.asin}/> 
-            }
-          </Card.Body>
-        </Card>
-
-
-
-    )
-
-  }
-
-}
-
-
-
-
-export default MyCard
+export default MyCard;
