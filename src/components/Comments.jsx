@@ -53,7 +53,7 @@ import SingleComment from "./SingleComment";
 //   }
 // }
 
-const Comments = () => {
+const Comments = (props) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -87,7 +87,7 @@ const Comments = () => {
       }
     };
 
-    fetchComments(this.props.query)
+    fetchComments(props.query)
   }, []);
 
   return(
