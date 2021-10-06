@@ -18,7 +18,7 @@ is true, the SingleBook should have some styling that reflects that state change
 
 */
 
-const MyCard = (props) => {
+const SingleBook = (props) => {
   const [selected, setSelected] = useState(false);
 
   const handleToggle = () => {
@@ -40,7 +40,7 @@ const MyCard = (props) => {
   );
 };
 
-// class MyCard extends Component {
+// class SingleBook extends Component {
 //   state = {
 //     selected: false,
 //   };
@@ -66,4 +66,4 @@ const MyCard = (props) => {
 //   }
 // }
 
-export default MyCard;
+export default SingleBook;

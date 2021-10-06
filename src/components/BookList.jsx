@@ -3,11 +3,12 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import MyCard from "./SingleBook";
+
 
 import FantasyBooks from "../data/fantasy.json";
 
 import FormControl from "react-bootstrap/FormControl";
+import SingleBook from "./SingleBook";
 
 
 const BookList = (props) => {
@@ -41,8 +42,8 @@ const BookList = (props) => {
         />
 
         {filteredBooks.map((book) => (
-          <Col key={book.asin} xs={2}>
-            <MyCard book={book} />
+          <Col key={book.asin} xs={3}>
+            <SingleBook book={book} />
           </Col>
         ))} 
       </Row>
@@ -91,7 +92,7 @@ const BookList = (props) => {
 
 //           {this.state.filteredBooks.map((book) => (
 //             <Col key={book.asin} xs={2}>
-//               <MyCard book={book} />
+//               <SingleBook book={book} />
 //             </Col>
 //           ))} 
 //         </Row>
