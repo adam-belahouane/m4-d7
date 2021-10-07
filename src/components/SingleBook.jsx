@@ -1,5 +1,5 @@
 import Card from "react-bootstrap/Card";
-import { Component, useState } from "react";
+import { useState } from "react";
 import Comments from "./Comments";
 
 /*

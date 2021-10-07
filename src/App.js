@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import BookList from "./components/BookList";
 import "./components/singleBook.css";
 import MyNavbar from "./components/MyNavbar";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 // import MyCard from './components/SingleBook';
 // import FantasyBooks from './data/fantasy.json'
 import Registration from "./components/Registration";
