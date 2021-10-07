@@ -27,7 +27,7 @@ const BookList = (props) => {
   return (
     <Container>
       <Row>
-        <FormControl
+        <FormControl className="my-3"
           placeholder="Book Title"
           aria-label="Book Title"
           value={title}
